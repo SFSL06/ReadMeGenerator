@@ -50,18 +50,21 @@ const promptUser = () =>
 
 const generateReadMe = (answers) =>
 `# ${answers.name}
+
   ## Table of Contents:
   1. [Description](#description) 
-  2. [Installation](#Installation)
-  3. [Usage](#Usage)  
-  4. [Contributing](#Contributing)
-  5. [Tests](#Tests)
-  6. [License](#License)
-  7. [GitHub](#GitHub)
-  8. [E-mail](#E-mail)
+  2. [Installation](#installation)
+  3. [Usage](#usage)  
+  4. [Contributing](#contributing)
+  5. [Tests](#tests)
+  6. [License](#license)
+  7. [GitHub](#gitHub)
+  8. [E-mail](#e-mail)
 
 ## Description
 ${answers.description} 
+
+![README_GeneratorScreenshot](/ReadMeGeneratorScreenshot1.jpg)
 
 ## Installation
 ${answers.installation}
@@ -87,6 +90,6 @@ ${answers.email}`;
 
 
 promptUser()
-  .then((answers) => writeFileAsync('answers.name.md', generateReadMe(answers)))
+  .then((answers) => writeFileAsync('ReadMeGenerator.md', generateReadMe(answers)))
   .then(() => console.log('Successfully created ReadMe file'))
   .catch((err) => console.error(err));
