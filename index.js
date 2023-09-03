@@ -2,8 +2,10 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-const writeFileAsync = util.promisify(fs.writeFile);
+//added promises
 
+const writeFileAsync = util.promisify(fs.writeFile);
+//user will be prompted for input to generate README
 const promptUser = () =>
   inquirer.prompt([
      {
@@ -46,7 +48,8 @@ const promptUser = () =>
     }
 
   ])
-  
+
+//generate README file based on user input
 
 const generateReadMe = (answers) =>
 `# ${answers.name}
